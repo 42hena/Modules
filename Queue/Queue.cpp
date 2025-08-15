@@ -55,6 +55,19 @@ bool QueueArray::Front(int& outData)
 	return true;
 }
 
+bool QueueArray::Back(int& outData)
+{
+	// 큐가 빈 경우
+	if (IsEmpty() == true) {
+		return false;
+	}
+
+	// 데이터 추출
+	int idx = _rear - 1 < 0 ? _rear - 1 + cArraySize : _rear - 1;
+	outData = _data[idx];
+	return true;
+}
+
 bool QueueArray::IsEmpty() const
 {
 	return _front == _rear;
@@ -145,6 +158,18 @@ bool QueueList::Front(int& outData)
 
 	// 데이터 추출
 	outData = _front->_pNext->_data;
+	return true;
+}
+
+bool QueueList::Back(int& outData)
+{
+	// 큐가 빈 경우
+	if (IsEmpty() == true) {
+		return false;
+	}
+
+	// 데이터 추출
+	outData = _rear->_data;
 	return true;
 }
 

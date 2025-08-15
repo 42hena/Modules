@@ -19,6 +19,7 @@ public:
 	bool	Push(int data);
 	bool	Pop(int& outData);
 	bool	Front(int& outData);
+	bool	Back(int& outData);
 
 	bool	IsEmpty()	const;
 	bool	IsFull()	const;
@@ -60,6 +61,7 @@ public:
 	bool	Push(int data);
 	bool	Pop(int& outData);
 	bool	Front(int& outData);
+	bool	Back(int& outData);
 
 	bool	IsEmpty()	const;
 	int		Size()		const;

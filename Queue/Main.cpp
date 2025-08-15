@@ -45,9 +45,12 @@ void QueueListTest()
 		printf("Push 성공 여부: %d, 삽입 값: %d\n", retPush, i + 1);
 	}
 
+	int value =0 ;
 	printf("\n");
 	printf("Empty      : %d\n", ql.IsEmpty());
-	printf("Size       : %d\n\n", ql.Size());
+	printf("Size       : %d\n", ql.Size());
+	printf("Front      : %d %d\n", ql.Front(value), value);
+	printf("Back       : %d %d\n\n", ql.Back(value), value);
 
 	int frontValue;
 	int popValue;
