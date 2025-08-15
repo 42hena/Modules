@@ -29,6 +29,7 @@ int main()
 {
 	int array[] = { 5,4,3,2,1 };
 	int length = 5;
+
 	Print(array, length);
 	SelectionSort(array, length);
 	Print(array, length);
