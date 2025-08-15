@@ -99,6 +99,12 @@ StackList::StackList()
 
 StackList::~StackList()
 {
+	while (_pHead != nullptr)
+	{
+		StackNode* deleteNode = _pHead;
+		_pHead = _pHead->_pNext;
+		delete deleteNode;
+	}
 }
 
 /*
