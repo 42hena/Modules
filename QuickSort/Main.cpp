@@ -1,77 +1,36 @@
-﻿#include <iostream>
+#include <iostream>
 #include <algorithm>
+#include "QuickSort.h"
 using namespace std;
 
-using namespace std;
+#define ARRAY_SIZE(array) sizeof(array) / sizeof(array[0])
 
-void QuickSort(int array[], int l, int r)
-{
-    if (l >= r)
-        return;
-
-    int pivot = array[r];
-    int i = l;
-    int j = r;
-
-    while (true)
-    {
-        // 왼쪽에서 pivot보다 큰 값 찾기
-        while (i < j) {
-            if (pivot < array[i])
-                break;
-            i = i + 1;
-        }
-
-        // 오른쪽에서 pivot보다 작은 값 찾기
-        while (i < j) {
-            if (pivot > array[j])
-                break;
-            j = j - 1;
-        }
-        if (i >= j)
-        {
-            // i와 j가 교차하면 partition 종료
-            break;
-        }
-
-        swap(array[i], array[j]);
-    }
-
-    printf("prev\n");
-    for (int i = 0; i < 5; ++i)
-    {
-        printf("%d, ", array[i]);
-    }
-    printf("\n");
-
-    printf("%d %d\n", r, i);
-    swap(array[r], array[j]);
-
-    printf("After\n");
-    for (int i = 0; i < 5; ++i)
-    {
-        printf("%d, ", array[i]);
-    }
-    printf("\n");
-
-    // 재귀 호출
-    QuickSort(array, l, j - 1);
-    QuickSort(array, j + 1, r);
-}
-
-
-void Print(int array[], int length)
-{
-	for (int i = 0; i < length; ++i)
-	{
-		printf("%d ", array[i]);
-	}
-	printf("\n");
-}
 int main()
 {
-	int array[] = { 3, 3, 3, 3, 3 };
-	int legnth = sizeof(array) / sizeof(array[0]);
-	QuickSort(array, 0, legnth - 1);
-	Print(array, legnth);
+    int array[] =
+    {
+        1, 58, 10, 20, 56, 63, 73, 5, 28, 37,
+        80, 61, 82, 45, 11, 66, 83, 59, 22, 64,
+        52, 89, 94, 76, 44, 40, 75, 2, 23, 57,
+        92, 8, 41, 96, 15, 84, 35, 69, 54, 47,
+        90, 24, 43, 74, 34, 85, 72, 95, 18, 17,
+        98, 9, 29, 53, 27, 79, 39, 51, 31, 16,
+        6, 97, 26, 100, 21, 48, 33, 60, 91, 19,
+        30, 13, 71, 78, 87, 25, 81, 4, 42, 93,
+        49, 12, 14, 7, 62, 77, 38, 99, 88, 50,
+        32, 46, 70, 3, 86, 68, 36, 67, 55, 65,1, 58, 10, 20, 56, 63, 73, 5, 28, 37,
+        80, 61, 82, 45, 11, 66, 83, 59, 22, 64,
+        52, 89, 94, 76, 44, 40, 75, 2, 23, 57,
+        92, 8, 41, 96, 15, 84, 35, 69, 54, 47,
+        90, 24, 43, 74, 34, 85, 72, 95, 18, 17,
+        98, 9, 29, 53, 27, 79, 39, 51, 31, 16,
+        6, 97, 26, 100, 21, 48, 33, 60, 91, 19,
+        30, 13, 71, 78, 87, 25, 81, 4, 42, 93,
+        49, 12, 14, 7, 62, 77, 38, 99, 88, 50,
+        32, 46, 70, 3, 86, 68, 36, 67, 55, 65
+    };
+
+	int length = ARRAY_SIZE(array);
+	QuickSort(array, 0, length - 1);
+	Print(array, length);
 }
