@@ -40,7 +40,7 @@ bool StackArray::Pop(int& outData)
 bool StackArray::Peek(int& outData)
 {
     // Case 스택이 빈 경우
-    if (IsEmpty()) {
+    if (IsEmpty() == true) {
         return false;
     }
 
