@@ -73,7 +73,7 @@ public:
     int		Size()		const;
 #pragma endregion
 
-#pragma region 개인 함수
+#pragma region 내부 함수
 private:
 
     /**
